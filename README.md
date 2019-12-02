@@ -26,7 +26,7 @@ export PACT_BROKER_PASSWORD=pact-password
 
 ```
 Usage:
-  npx pact-broker-helper createWebhookIfNotExists --consumerName=accounts --providerName=authentication --webhookTargetUrl=https://rplan.com/jenkins/build/master
+  npx pact-broker-cli createWebhookIfNotExists --consumerName=accounts --providerName=authentication --webhookTargetUrl=https://rplan.com/jenkins/build/master
 
 Options:
   --consumerName                                            # The name of the consumer. Pact changes from this build cause the webhook to be fired.
@@ -47,7 +47,7 @@ It Will create a webhooks to the Pact Broker.
 
 ```
 Usage:
-  npx pact-broker-helper publish --pactFilesOrDirs=./pacts --consumerVersion=1.0.0 --tags=master
+  npx pact-broker-cli publish --pactFilesOrDirs=./pacts --consumerVersion=1.0.0 --tags=master
 
 Options:
   --pactFilesOrDirs                                        # Array of local Pact files or directories containing them
@@ -61,7 +61,7 @@ Publishes pacts to the pact broker
 
 ```
 Usage:
-  npx pact-broker-helper canIDeploy --pacticipants=accounts:1.0.0 --retryWhileUnknown=36 --retryInterval=15
+  npx pact-broker-cli canIDeploy --pacticipants=accounts:1.0.0 --retryWhileUnknown=36 --retryInterval=15
 
 Options:
   --pacticipants                           # Array of participant names
