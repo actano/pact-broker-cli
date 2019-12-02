@@ -1,0 +1,81 @@
+{
+  "consumer": {
+    "name": "notifications"
+  },
+  "provider": {
+    "name": "accounts"
+  },
+  "interactions": [
+    {
+      "description": "a request to get information about user 1",
+      "providerState": "user with id user_17a8a17b-6676-47dd-8963-e1aee412662f",
+      "request": {
+        "method": "GET",
+        "path": "/users",
+        "query": "ids=user_17a8a17b-6676-47dd-8963-e1aee412662f"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "results": [
+            {
+              "userId": "user_17a8a17b-6676-47dd-8963-e1aee412662f",
+              "email": "john.doe@example.com",
+              "isVerified": true,
+              "firstName": "John",
+              "lastName": "Doe"
+            }
+          ]
+        },
+        "matchingRules": {
+          "$.headers.Content-Type": {
+            "match": "regex",
+            "regex": "application\\/json(;.*)?"
+          }
+        }
+      },
+      "metadata": null
+    },
+    {
+      "description": "a request to get information about user 2",
+      "providerState": "user with id user_8402856a-576a-405b-b17d-1d7c449746a2",
+      "request": {
+        "method": "GET",
+        "path": "/users",
+        "query": "ids=user_8402856a-576a-405b-b17d-1d7c449746a2"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "results": [
+            {
+              "userId": "user_8402856a-576a-405b-b17d-1d7c449746a2",
+              "email": "eva.smith@example.com",
+              "isVerified": true,
+              "firstName": "Eva",
+              "lastName": "Smith"
+            }
+          ]
+        },
+        "matchingRules": {
+          "$.headers.Content-Type": {
+            "match": "regex",
+            "regex": "application\\/json(;.*)?"
+          }
+        }
+      },
+      "metadata": null
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
