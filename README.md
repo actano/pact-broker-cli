@@ -73,6 +73,8 @@ Options:
                                            # Default: 0
   --retryInterval                          # The time between retries in seconds, use with retryWhileUnknown
                                            # Default: 0
+  --timeout                                # Timeout for retrying can i deploy check in seconds
+                                           # Default: 60
   --tag                                    # The tag you want to deploy to
 
 Description:

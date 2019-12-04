@@ -1,9 +1,10 @@
 const pact = require('@pact-foundation/pact-node')
 
-const handler = async ({ tag, ...args }) => {
+const handler = async ({ tag, timeout, ...args }) => {
   const opts = {
     ...args,
     to: tag,
+    timeout: timeout * 1000,
     pactBroker: process.env.PACT_BROKER_URL,
     pactBrokerUsername: process.env.PACT_BROKER_USERNAME,
     pactBrokerPassword: process.env.PACT_BROKER_PASSWORD,
@@ -41,6 +42,12 @@ const builder = yargs => yargs
     describe: 'The time between retries in seconds, use with retryWhileUnknown',
     demandOption: false,
     default: 0,
+    type: 'number',
+  })
+  .option('timeout', {
+    describe: 'Timeout for retrying can i deploy check in seconds',
+    demandOption: false,
+    default: 60,
     type: 'number',
   })
   .option('tag', {
