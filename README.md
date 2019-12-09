@@ -1,10 +1,10 @@
 # Pact Broker Client
 
-A client for Pact Broker. Publishes, Create Webhooks, Verify pacts. The functionality is available via a CLI
+A client for Pact Broker. Publishes, creates webhooks, verifies pacts. The functionality is available via a CLI.
 
 ## Installation
 
-### CLI
+### Install CLI
 
 `yarn install @rplan/pact-broker-cli`
 
@@ -22,6 +22,8 @@ export PACT_BROKER_USERNAME=pact-broker-user-example
 export PACT_BROKER_PASSWORD=pact-password
 ```
 
+## Commands
+
 ### createWebhookIfNotExists
 
 ```
@@ -30,7 +32,7 @@ Usage:
 
 Options:
   --consumerName                                            # The name of the consumer. Pact changes from this build cause the webhook to be fired.
-  --providerName                                            # The name of the provider. Pact changes from the consumer cause this build to be fired
+  --providerName                                            # The name of the provider. Pact changes from the consumer cause this build to be fired.
   --webhookTargetHttpMethod ['GET', 'PUT', 'POST']          # The http method the webhook should use when triggered
                                                             # Default: POST               
   --webhookTargetUrl                                        # The url the webhook should use when triggered
@@ -38,9 +40,10 @@ Options:
                                                             # Default: false
   --webhookTargetBasicAuthUsername                          # Username for basic auth if needed
   --webhookTargetBasicAuthPassword                          # Password for basic auth if needed
-  --force                                                   # Always create the webhook, regardless of if it exists or not
+  --force                                                   # Always create the webhook, whether it exists or not
 
-It Will create a webhooks to the Pact Broker.
+Description:
+    Creates a webhook to the Pact Broker.
 ```
 
 ### publish
@@ -51,10 +54,11 @@ Usage:
 
 Options:
   --pactFilesOrDirs                                        # Array of local Pact files or directories containing them
-  --consumerVersion                                        # A string containing a semver-style version e.g. 1.0.0
-  --tags                                                   # An array of Strings to tag the Pacts being published
+  --consumerVersion                                        # A string containing a semver-style version, e.g. 1.0.0
+  --tags                                                   # An array of strings to tag the Pacts being published
 
-Publishes pacts to the pact broker
+Description:
+    Publishes pacts to the pact broker.
 ```
 
 ### canIDeploy
