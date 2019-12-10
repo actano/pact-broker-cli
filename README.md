@@ -65,10 +65,10 @@ Description:
 
 ```
 Usage:
-  npx pact-broker-cli canIDeploy --pacticipants=accounts:1.0.0 --retryWhileUnknown=36 --retryInterval=15
+  npx pact-broker-cli canIDeploy --pacticipants=accounts:1.0.0 --retryWhileUnknown=36 --retryInterval=15 --timeout=600
 
 Options:
-  --pacticipants                           # Array of participant names
+  --pacticipants                           # Array of participant names with participant version
   --output                                 # Specify output to show, json or table
                                            # Default: table
   --verbose                                # Set the logging mode to verbose
